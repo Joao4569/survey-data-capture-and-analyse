@@ -13,16 +13,13 @@
 
 ![#Image-Name](Relative-link.png)
 
-### Technique Pages
 
-- 
-- 
+## Setup of Gitpod Workspace and resources
 
-
-### Sign Up Page
-
-- The BeCentered sign up page has remainded largely unchanged, besides for how I chose to design the fieldsets on the form in the final product.
-
+I made use of Code Institutes "Love Sandwiches Walkthrough Project", "Getting Set Up" course videos for the following:
+ - [Creating a Google Sheet](https://youtu.be/4MWpwuPpSCA).
+ - [To activate API credentials](https://youtu.be/WTll5p4N7hE).
+ - [Setup of Gitpod Workspace](https://youtu.be/3ikrLWM0QqU).
 
 ## Features
 
@@ -133,6 +130,8 @@ Here is the live link [BeCentered](https://joao4569.github.io/be-centered/)
 ## Credits
 
 - First and foremost I would like to thank my mentor Anthony for his valuable input.
+- Code institutes Course material was essential for setting up and deployment.
+
 
 ### Content
 
