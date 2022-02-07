@@ -20,6 +20,7 @@ I made use of Code Institutes "Love Sandwiches Walkthrough Project", "Getting Se
  - [Creating a Google Sheet](https://youtu.be/4MWpwuPpSCA).
  - [To activate API credentials](https://youtu.be/WTll5p4N7hE).
  - [Setup of Gitpod Workspace](https://youtu.be/3ikrLWM0QqU).
+ - [Connecting to the API with Python](https://youtu.be/lPTKUiafTRY).
 
 ## Features
 
