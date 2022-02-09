@@ -37,7 +37,7 @@ def capture_survey_data():
     # Change user input string to a list.
     extracted_survey_results = survey_result_manual_input_str.split(",")
 
-    print(survey_result_manual_input_str)
+    data_validator(extracted_survey_results)
 
     # print(f"\nThe ratings provided were {survey_result_manual_input_str}\n")
 
@@ -46,6 +46,21 @@ def capture_survey_data():
     #     print("yes")
     # else:
     #     capture_survey_data()
+
+
+def data_validator(user_values):
+    """
+    This will try to convert all string values into integers,
+    raise a ValueError if not and also check if exactly 4 values were entered.
+    """
+    try:
+        if len(user_values) != 4:
+            raise ValueError(
+                f"Four values are required, you only provided {len(user_values)}"
+            )
+    except ValueError as e:
+        print(f"Invalid results supplied, {e}, please re-enter your results.\n")
+        capture_survey_data()
 
 
 capture_survey_data()
