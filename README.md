@@ -41,10 +41,13 @@ I made use of Code Institutes "Love Sandwiches Walkthrough Project", "Getting Se
 
 ## Testing
 
-- Found bug with navigation menu order, it is displaying in reverse order.
-  - **Resolved** by researching information on [Web Developer Diary](http://nambiara.blogspot.com/2010/10/float-right-without-changing-order.html) and applying it to my design.
-- Found that the Hero image did not cover entire screen width.
-  - **Resolved** by using original image size instead of a re-sized image.
+- Made use of the terminal window and print function on multiple occasions in order to view data and check if functions work as expected.
+
+- Tested data_validator function with various data types and amounts of data provided:
+ - If less than 4 values provided - ValueError raised as intended.
+ - If more than 4 values provided  - ValueError raised as intended.
+ - If a non numerical string is provided by the user - Value Error raised as intended.
+
 - Found that the tile display on the home page for the method introductions did not display as planned.
   - **Resolved** by adding additional div elements and floating their children as needed.
 
