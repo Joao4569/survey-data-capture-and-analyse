@@ -90,7 +90,9 @@ def update_survey_worksheet(survey_data):
     with the validated data list inputed by the user.
     """
     print("Updating survey data to worksheet.....\n")
-    print(survey_data)
+    survey_worksheet = SHEET.worksheet("Survey_Results")
+    survey_worksheet.append_row(survey_data)
+    print("Survey data captured successfully.\n")
 
 
 verified_user_data = capture_survey_data()
