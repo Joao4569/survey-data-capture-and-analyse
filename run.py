@@ -58,16 +58,22 @@ def data_validator(user_values):
     This will also raise a ValueError if the number of data provided was not exactly 4 values.
     """
     try:
-        [int(user_value) for user_value in user_values]
+        for user_value in user_values:
+            if int(user_value) > 0 and int(user_value) < 10:
+                continue
+            else:
+                raise ValueError("One or more of your inputs was greater than 10 or less than 0, only values between 0 and 10 will be accepted")
+
         if len(user_values) != 4:
             raise ValueError(
                 f"Four values are required, you only provided {len(user_values)}"
             )
     except ValueError as e:
-        print(f"Invalid results supplied, {e}, please re-enter your results.\n")
+        print(f"\nInvalid results supplied, {e}, please re-enter your results.\n")
         return False
-    
+ 
     return True
 
 
 verified_user_data = capture_survey_data()
+print(verified_user_data)
