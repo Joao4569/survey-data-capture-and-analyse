@@ -45,6 +45,7 @@ def capture_survey_data():
         # Change user input string to a list.
         extracted_survey_results = survey_result_manual_input_str.split(",")
 
+        # Confirm to user that input was correct and break while loop.
         if data_validator(extracted_survey_results):
             print("Valid entry accepted!")
             break
