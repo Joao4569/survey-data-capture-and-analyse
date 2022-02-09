@@ -4,15 +4,6 @@
 
 - Lucidchart chart and planning
 
-### Home Page
-
-- Example point 1.
-- Example point 2.
-- Example point 3.
-- Example point 4.
-
-![#Image-Name](Relative-link.png)
-
 
 ## Setup of Gitpod Workspace and resources
 
@@ -37,19 +28,6 @@ I made use of Code Institutes "Love Sandwiches Walkthrough Project", "Getting Se
  - If a non numerical string is provided by the user - ValueError raised as intended.
  - If each supplied result by user is between 0 and 10 - ValueError raised as intended.
 
-- Found that the tile display on the home page for the method introductions did not display as planned.
-  - **Resolved** by adding additional div elements and floating their children as needed.
-
-- Tested all internal links - All are functioning as intended.
-- Tested all external links - All are functioning as intended.
-- Tested all embedded videos - All are functioning as intended.
-- Sourced most common media breakpoint widths on [www.freecodecamp.org](https://www.freecodecamp.org/news/css-media-queries-breakpoints-media-types-standard-resolutions-and-more/.) and made the site responsive down to minimum width of 320 pixels.
-  - Mobile devices: 320px — 480px
-  - iPads, Tablets: 481px — 768px
-  - Small screens, laptops: 769px — 1024px
-  - Desktops, large screens: 1025px — 1200px
-  - Extra large screens, TV: 1201px and more
-- Made use of Chrome developer tools for previewing and testing new designs for media queries as well as UX aspects.
 
 ### Validator Testing
 
@@ -57,68 +35,21 @@ I made use of Code Institutes "Love Sandwiches Walkthrough Project", "Getting Se
 
 #### Initial Validator Tests
 - Initial validator test for index.html results:
-  - 3 Bad Value errors for having spaces in image names.
-    - **Resolved** by re-naming images accordingly.
-  - 1 Warning for using an H1 tag incorrectly.
-    - **Resolved** by replacing it with an unordered list for logical semantic structure.
 
-- Initial validator test for balance.html results:
-  - Found 4 errors referring to usage of height and width attributes in iframe tags with values of "100%".
-    - **Resolved** by removing attributes and styling with CSS.
-  - Found 2 warnings for the use of H1 tags.
-    - **Resolved** by replacing with H2 tags for semantic structure.
-
-- Initial validator test for minfulness.html results:
-  - Found 4 errors referring to usage of height and width attributes in iframe tags with values of "100%".
-    - **Resolved** by removing attributes and styling with CSS.
-  - Found 2 warnings for the use of H1 tags.
-    - **Resolved** by replacing with H2 tags for semantic.
-
-- Initial validator test for sign-up.html results:
-  - Found 1 warning for the use of H1 tags.
-    - **Resolved** by replacing with H2 tags for semantic structure.
-
-#### Final Validator tests
-
-- Final validator test for index.html results:
-  - 1 Warning for the introduction section not having a heading as it was wrapped in a nav element.
-    - **Resolved** by removing the outer nav element as it served no other function.
-
-- Final validator test for balance.html results:
-  - No errors or warnings found.
-
-- Final validator test for mindfulness.html results:
-  - No errors or warnings found.
-
-- Final validator test for sign-up.html results:
-  - No errors or warnings found.
-
-- Final validator test for style.css results:
-  - file validates as CSS level 3 + SVG
-
-- Final validator test for thank-you.html results:
-  - No errors or warnings found.
-
-- All the pages of  have passed their validator testing at the time of submission.
 
 ### Unfixed Bugs
 
-- The only issues that I have found with Becentered is that I feel some containers (for example the technique page headings, detailed technique descriptions, sign up page heading, thank you page heading and footer) are not fully responsive in relation to their content and that a lot of manual adjustments had to be made to assist their responsiveness concerning appearance over the various media queries.
-- I started doing some research and I was looking into the issue for this project and think that by using flex boxes I could possibly solve this issue but as I only discovered this possible solution barely 48 hours prior to the final submission date, I decided it unwise to try and restructure my code on that scale so close to the submission date.
+- 
 
 ## Deployment
 
-- BeCentered was deployed to GitHub pages, the steps were as follows:
-  - While in the GitHub repository, select the settings tab.
-  - Then select the Pages tab from the new menu to the left of the viewport.
-  - From the source section drop down menu, select Main branch.
-  - Once the main branch has been selected, the page will automatically refresh with a detailed ribbon display to indicate the successful deployment.
+- 
 
-Here is the live link [BeCentered](https://joao4569.github.io/be-centered/)
+Here is the live link [???](###)
 
 ## Deployment Testing
 
-- Tested all internal and external links, form validation as well as responsivenes of Becentered on deployed site and all are working as intended.
+- 
 
 ## Credits
 
@@ -133,4 +64,4 @@ Here is the live link [BeCentered](https://joao4569.github.io/be-centered/)
 
 ### Media
 
-- All images sourced from [Pexels](https://www.pexels.com).
+- 
