@@ -49,6 +49,8 @@ def capture_survey_data():
             print("Valid entry accepted!")
             break
 
+    return extracted_survey_results
+
 
 def data_validator(user_values):
     """
@@ -68,4 +70,4 @@ def data_validator(user_values):
     return True
 
 
-capture_survey_data()
+verified_user_data = capture_survey_data()
