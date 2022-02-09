@@ -1,13 +1,16 @@
 """
-Code below was sourced from Code Institutes "Love Sandwiches Walkthrough Project",
-"Getting Set Up" course videos
+Code below was sourced from Code Institutes "Love Sandwiches Walkthrough
+Project", "Getting Set Up" course videos
 """
 
 # Import gspread library in order to access and update data on spreadsheet.
 import gspread
 
-""" Import Credentials class from google-auth library
-service account function in order to set up authentication needed to access Google Cloud"""
+""" 
+Import Credentials class from google-auth library
+service account function in order to set up authentication needed to
+access Google Cloud
+"""
 from google.oauth2.service_account import Credentials
 
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
@@ -28,6 +31,7 @@ SHEET = GSPREAD_CLIENT.open('survey_data_capture_sheet')
 End of code taken from Code Institutes "Love Sandwiches Walkthrough Project",
 "Getting Set Up" course videos
 """
+
 
 def capture_survey_data():
     """
@@ -80,5 +84,15 @@ def data_validator(user_values):
     return True
 
 
+def update_survey_worksheet(survey_data):
+    """
+    Update survey worksheet by adding a new row to the worksheet
+    with the validated data list inputed by the user.
+    """
+    print("Updating survey data to worksheet.....\n")
+    print(survey_data)
+
+
 verified_user_data = capture_survey_data()
-print(verified_user_data)
+survey_data = [int(score) for score in verified_user_data]
+update_survey_worksheet(survey_data)
