@@ -55,16 +55,20 @@ def capture_survey_data():
 
 def data_validator(user_values):
     """
-    This will try to convert all string values into integers and will raise an ValueError if not.
-    This will also raise a ValueError if the number of data provided was not exactly 4 values.
+    This will try to convert all string values into integers, check that all integers
+    are betweeen 0 and 10 and also check if exactly 4 values were supplied. If any of
+    these conditions are not met then specific ValueError's will be raised.
     """
     try:
         for user_value in user_values:
+
+            # Check that all values provided are between 0 and 10.
             if int(user_value) > 0 and int(user_value) < 10:
                 continue
             else:
                 raise ValueError("One or more of your inputs was greater than 10 or less than 0, only values between 0 and 10 will be accepted")
 
+        # Check that excatly 4 values are provided
         if len(user_values) != 4:
             raise ValueError(
                 f"Four values are required, you only provided {len(user_values)}"
