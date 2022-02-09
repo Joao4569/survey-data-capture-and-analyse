@@ -26,27 +26,16 @@ I made use of Code Institutes "Love Sandwiches Walkthrough Project", "Getting Se
 
 ### Existing Features
 
-- __Navigation Bar__
-
-  - 
-  - 
-
-- __The Landing Page Image__
-
-  - 
-  - 
-
-### Features Left to Implement
-
-
 ## Testing
 
 - Made use of the terminal window and print function on multiple occasions in order to view data and check if functions work as expected.
 
 - Tested data_validator function with various data types and amounts of data provided:
+
  - If less than 4 values provided - ValueError raised as intended.
  - If more than 4 values provided  - ValueError raised as intended.
- - If a non numerical string is provided by the user - Value Error raised as intended.
+ - If a non numerical string is provided by the user - ValueError raised as intended.
+ - If each supplied result by user is between 0 and 10 - ValueError raised as intended.
 
 - Found that the tile display on the home page for the method introductions did not display as planned.
   - **Resolved** by adding additional div elements and floating their children as needed.
