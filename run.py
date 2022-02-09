@@ -1,10 +1,13 @@
-""" All code below up until line 22 was sourced from Code Institutes "Love Sandwiches Walkthrough Project",
-"Getting Set Up" course videos"""
+"""
+Code below was sourced from Code Institutes "Love Sandwiches Walkthrough Project",
+"Getting Set Up" course videos
+"""
 
 # Import gspread library in order to access and update data on spreadsheet.
 import gspread
 
-# Import Credentials class from google-auth library, service account function in order to set up authentication needed to access Google Cloud.
+""" Import Credentials class from google-auth library
+service account function in order to set up authentication needed to access Google Cloud"""
 from google.oauth2.service_account import Credentials
 
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
@@ -21,10 +24,14 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('survey_data_capture_sheet')
 
+"""
+End of code taken from Code Institutes "Love Sandwiches Walkthrough Project",
+"Getting Set Up" course videos
+"""
 
 def capture_survey_data():
     """
-    Capture user inputed survey data from terminal input.
+    Instruct the user how to input data and allow the user to confirm their input.
     """
     # Instructions to user for required input.
     print(f"Please enter survey results below,\n")
@@ -43,6 +50,9 @@ def capture_survey_data():
 
 
 def get_user_input():
+    """
+    Capture the user's input and convert it into a string of results.
+    """
     # Get user input as a string.
     survey_result_manual_input_str = input("Please enter ratings here: ")
 
@@ -54,8 +64,7 @@ def get_user_input():
 
 def data_validator(user_values):
     """
-    This will try to convert all string values into integers,
-    raise a ValueError if not and also check if exactly 4 values were entered.
+    This will raise a ValueError if the data provided was not exactly 4 values.
     """
     try:
         if len(user_values) != 4:
