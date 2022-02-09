@@ -31,6 +31,18 @@ def capture_survey_data():
     print("Only one rating between 0 and 10 for each of the four catergories,")
     print("each seperated by a comma. i.e. 4,5,6,7\n")
 
+    get_user_input()
+
+    print(f"\nThe ratings provided were {survey_result_manual_input_str}\n")
+
+    confirm_result_manual_input_str = input("Are these correct? 'y' for Yes and 'n' for No:  ")
+    if confirm_result_manual_input_str.lower() == "y":
+        print("yes")
+    else:
+        get_user_input()
+
+
+def get_user_input():
     # Get user input as a string.
     survey_result_manual_input_str = input("Please enter ratings here: ")
 
@@ -38,14 +50,6 @@ def capture_survey_data():
     extracted_survey_results = survey_result_manual_input_str.split(",")
 
     data_validator(extracted_survey_results)
-
-    # print(f"\nThe ratings provided were {survey_result_manual_input_str}\n")
-
-    # confirm_result_manual_input_str = input("Are these correct? 'y' for Yes and 'n' for No:  ")
-    # if confirm_result_manual_input_str.lower() == "y":
-    #     print("yes")
-    # else:
-    #     capture_survey_data()
 
 
 def data_validator(user_values):
@@ -60,7 +64,7 @@ def data_validator(user_values):
             )
     except ValueError as e:
         print(f"Invalid results supplied, {e}, please re-enter your results.\n")
-        capture_survey_data()
+        get_user_input()
 
 
 capture_survey_data()
