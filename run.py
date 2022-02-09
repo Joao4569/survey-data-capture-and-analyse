@@ -63,10 +63,10 @@ def data_validator(user_values):
         for user_value in user_values:
 
             # Check that all values provided are between 0 and 10.
-            if int(user_value) > 0 and int(user_value) < 10:
+            if int(user_value) >= 0 and int(user_value) <= 10:
                 continue
             else:
-                raise ValueError("One or more of your inputs was greater than 10 or less than 0, only values between 0 and 10 will be accepted")
+                raise ValueError("One or more of your inputs was greater than 10 or\nless than 0, only values between 0 and 10 will be accepted")
 
         # Check that excatly 4 values are provided
         if len(user_values) != 4:
@@ -74,7 +74,7 @@ def data_validator(user_values):
                 f"Four values are required, you only provided {len(user_values)}"
             )
     except ValueError as e:
-        print(f"\nInvalid results supplied, {e}, please re-enter your results.\n")
+        print(f"\nInvalid results supplied, {e}, \nplease re-enter your results.\n")
         return False
  
     return True
