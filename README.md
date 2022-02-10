@@ -28,14 +28,21 @@ I made use of Code Institutes "Love Sandwiches Walkthrough Project", "Getting Se
  - If a non numerical string is provided by the user - ValueError raised as intended.
  - If each supplied result by user is between 0 and 10 - ValueError raised as intended.
 
+- Tested if program is updating the Google worksheet correctly - Working as intended.
+
 
 ### Validator Testing
 
-- Made use of the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/) for the CSS file and the official [W3C validator](https://validator.w3.org/) for all HTML file testing. !!!![PEP8](https://)
+- Made use of the [PEP8](http://pep8online.com/) online validation tool for systematic validator testing.
+
 
 #### Initial Validator Tests
-- Initial validator test for index.html results:
 
+- Initial validator test for run.py results:
+ - Found E402 error with position of Google-auth module level import - **Resolved** by changing position and eliminating unneccessary commenting.
+ - Found 2 errors (W291 and W293) for "whitespace" in code - All **Resolved**
+ - Found 6 E501 errors for length of line used - All **Resolved**
+ - Found E302 error for only spacing with 1 blank line instead of 2 - **Resolved**
 
 ### Unfixed Bugs
 
