@@ -41,7 +41,7 @@ def capture_survey_data():
 
     while True:
         # Get user input as a string.
-        survey_result_manual_input_str = input("Please enter ratings here: ")
+        survey_result_manual_input_str = input("Please enter ratings here: \n")
 
         # Change user input string to a list.
         extracted_survey_results = survey_result_manual_input_str.split(",")
