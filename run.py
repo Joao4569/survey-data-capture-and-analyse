@@ -94,7 +94,14 @@ def update_survey_worksheet(survey_data):
     survey_worksheet.append_row(survey_data)
     print("Survey data captured successfully.\n")
 
+def main():
+    """
+    Run all program functions
+    """
+    verified_user_data = capture_survey_data()
+    survey_data = [int(score) for score in verified_user_data]
+    update_survey_worksheet(survey_data)
 
-verified_user_data = capture_survey_data()
-survey_data = [int(score) for score in verified_user_data]
-update_survey_worksheet(survey_data)
+
+print("Welcome to Survey Data processor")
+main()
