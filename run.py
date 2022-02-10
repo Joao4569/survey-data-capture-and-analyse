@@ -6,11 +6,7 @@ Project", "Getting Set Up" course videos
 # Import gspread library in order to access and update data on spreadsheet.
 import gspread
 
-""" 
-Import Credentials class from google-auth library
-service account function in order to set up authentication needed to
-access Google Cloud
-"""
+# Import Credentials class for authentication.
 from google.oauth2.service_account import Credentials
 
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
@@ -35,7 +31,8 @@ End of code taken from Code Institutes "Love Sandwiches Walkthrough Project",
 
 def capture_survey_data():
     """
-    Instruct the user how to input data and allow the user to confirm their input.
+    This will instruct and capture user input
+    and return validated survey ratings.
     """
     # Instructions to user for required input.
     print(f"Please enter survey results below,\n")
@@ -59,9 +56,10 @@ def capture_survey_data():
 
 def data_validator(user_values):
     """
-    This will try to convert all string values into integers, check that all integers
-    are betweeen 0 and 10 and also check if exactly 4 values were supplied. If any of
-    these conditions are not met then specific ValueError's will be raised.
+    This will try to convert all string values into integers, check that all
+    integers are betweeen 0 and 10 and also check if exactly 4 values were
+    supplied. If any of these conditions are not met then specific
+    ValueError's will be raised.
     """
     try:
         for user_value in user_values:
@@ -70,18 +68,34 @@ def data_validator(user_values):
             if int(user_value) >= 0 and int(user_value) <= 10:
                 continue
             else:
-                raise ValueError("One or more of your inputs was greater than 10 or\nless than 0, only values between 0 and 10 will be accepted")
+                raise ValueError("""One or more of your inputs was greater than
+                                10 or less than 0, only values between 0 and 10
+                                will be accepted""")
 
         # Check that excatly 4 values are provided
         if len(user_values) != 4:
             raise ValueError(
-                f"Four values are required, you only provided {len(user_values)}"
+                f"""Four values are required, you only provided {len(user_values
+                )}"""
             )
     except ValueError as e:
-        print(f"\nInvalid results supplied, {e}, \nplease re-enter your results.\n")
+        print(f"""\nInvalid results supplied, {e}, \nplease re-enter your
+            results.\n""")
         return False
- 
+
     return True
+
+
+def allocate_survey_capture_number():
+    """
+    This will extract the last captured survey registry number and allocate
+    the next consecutive number to the captured results
+    """
+    print("Allocating survey registry number....")
+    survey_register = SHEET.worksheet("Survey_Results").get_all_values()
+    last_captured_rating = survey_register[-1][4]
+    new_survey_capture_number = int(last_captured_rating) + 1
+    return new_survey_capture_number
 
 
 def update_survey_worksheet(survey_data):
@@ -94,12 +108,14 @@ def update_survey_worksheet(survey_data):
     survey_worksheet.append_row(survey_data)
     print("Survey data captured successfully.\n")
 
+
 def main():
     """
     Run all program functions
     """
     verified_user_data = capture_survey_data()
     survey_data = [int(score) for score in verified_user_data]
+    survey_data.append(allocate_survey_capture_number())
     update_survey_worksheet(survey_data)
 
 
