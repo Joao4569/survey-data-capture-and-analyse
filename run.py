@@ -35,13 +35,14 @@ def capture_survey_data():
     and return validated survey ratings.
     """
     # Instructions to user for required input.
-    print(f"Please enter survey results below,\n")
-    print("Only one rating between 0 and 10 for each of the four catergories,")
-    print("each seperated by a comma. i.e. 4,5,6,7\n")
+    print("Please enter survey results below, as per the following instructions:\n")
+    print("Only one rating of between 0 and 10 for each of the four catergories,")
+    print("In the following order of catergories - (Ease of use),(Design),(Features),(Overall Satisfaction)\n")
+    print("each seperated by a comma and without any spaces in between. i.e. 6,7,5,8\n")
 
     while True:
         # Get user input as a string.
-        survey_result_manual_input_str = input("Please enter ratings here: \n")
+        survey_result_manual_input_str = input("Please enter ratings here: (Ease of use),(Design),(Features),(Overall Satisfaction)\n")
 
         # Change user input string to a list.
         extracted_survey_results = survey_result_manual_input_str.split(",")
