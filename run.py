@@ -9,8 +9,6 @@ import gspread
 # Import Credentials class for authentication.
 from google.oauth2.service_account import Credentials
 
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
-
 # Scope constant for IAM.
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -28,10 +26,12 @@ End of code taken from Code Institutes "Love Sandwiches Walkthrough Project",
 "Getting Set Up" course videos
 """
 
+# Code taken from https://lycaeum.dev/en/questions/287871, credited in README.
 CRED = '\033[91m'
-CGREEN  = '\33[32m'
+CGREEN = '\33[32m'
 CYELLOW = '\33[33m'
 CEND = '\033[0m'
+
 
 def capture_survey_data():
     """
@@ -41,13 +41,13 @@ def capture_survey_data():
     while True:
         # Instructions to user for required input.
         print("Please enter survey ratings below, as per the following"
-            " instructions:\n")
+              " instructions:\n")
         print("Only one rating of between 0 and 10 for each of the four"
-            " catergories,\n")
+              " catergories,\n")
         print("In the following order of catergories - \n(Ease of use),"
-            "(Design),(Features),(Overall Satisfaction).\n")
+              "(Design),(Features),(Overall Satisfaction).\n")
         print("Each seperated by a comma and without any spaces in"
-            "between. i.e. 6,7,5,8\n")
+              "between. i.e. 6,7,5,8\n")
 
         # Get user input as a string.
         survey_result_manual_input_str = input("Please enter ratings here: \n")
@@ -78,8 +78,8 @@ def data_validator(user_values):
                 continue
             else:
                 raise ValueError("One or more of your inputs was greater than"
-                                " 10 or less than 0, only values between 0 and 10"
-                                " will be accepted")
+                                 " 10 or less than 0, only values between 0"
+                                 "and 10 will be accepted")
 
         # Check that excatly 4 values are provided
         if len(user_values) != 4:
@@ -88,7 +88,8 @@ def data_validator(user_values):
                 f" {len(user_values)}"
             )
     except ValueError as e:
-        print(CRED + f"\nInvalid ratings supplied, {e}, \nPlease try again.\n" + CEND)
+        print(CRED + f"\nInvalid ratings supplied, {e}, \n"
+              "Please try again.\n" + CEND)
         return False
 
     return True
