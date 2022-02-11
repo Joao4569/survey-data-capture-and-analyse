@@ -30,6 +30,7 @@ End of code taken from Code Institutes "Love Sandwiches Walkthrough Project",
 CRED = '\033[91m'
 CGREEN = '\33[32m'
 CYELLOW = '\33[33m'
+CBOLD = '\33[1m'
 CEND = '\033[0m'
 
 
@@ -128,5 +129,5 @@ def main():
     update_survey_worksheet(survey_data)
 
 
-print("Welcome to Survey Data processor\n")
+print(CBOLD + "\nWelcome to Survey Data processor\n" + CEND)
 main()
