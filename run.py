@@ -28,6 +28,10 @@ End of code taken from Code Institutes "Love Sandwiches Walkthrough Project",
 "Getting Set Up" course videos
 """
 
+CRED = '\033[91m'
+CGREEN  = '\33[32m'
+CYELLOW = '\33[33m'
+CEND = '\033[0m'
 
 def capture_survey_data():
     """
@@ -53,7 +57,7 @@ def capture_survey_data():
 
         # Confirm to user that input was correct and break while loop.
         if data_validator(extracted_survey_results):
-            print("Valid entry accepted!")
+            print(CGREEN + "Valid entry accepted!\n" + CEND)
             break
 
     return extracted_survey_results
@@ -84,7 +88,7 @@ def data_validator(user_values):
                 f" {len(user_values)}"
             )
     except ValueError as e:
-        print(f"\nInvalid ratings supplied, {e}, \nPlease try again.\n")
+        print(CRED + f"\nInvalid ratings supplied, {e}, \nPlease try again.\n" + CEND)
         return False
 
     return True
@@ -95,7 +99,7 @@ def allocate_survey_capture_number():
     This will extract the last captured survey registry number and allocate
     the next consecutive number to the captured results
     """
-    print("Allocating survey registry number....")
+    print(CYELLOW + "Allocating survey registry number....\n" + CEND)
     survey_register = SHEET.worksheet("Survey_Results").get_all_values()
     last_captured_rating = survey_register[-1][4]
     new_survey_capture_number = int(last_captured_rating) + 1
@@ -107,10 +111,10 @@ def update_survey_worksheet(survey_data):
     Update survey worksheet by adding a new row to the worksheet
     with the validated data list inputed by the user.
     """
-    print("Updating survey data to worksheet.....\n")
+    print(CYELLOW + "Updating survey data to worksheet.....\n" + CEND)
     survey_worksheet = SHEET.worksheet("Survey_Results")
     survey_worksheet.append_row(survey_data)
-    print("Survey data captured successfully.\n")
+    print(CGREEN + "Survey data captured successfully.\n" + CEND)
 
 
 def main():
