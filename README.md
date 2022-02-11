@@ -74,7 +74,7 @@ Here is the live link [Survey Data Capture and Extraction Application](https://s
 
 ## Deployment Testing
 
-- 
+- Found bug with how print statements are displayed on deployed site in relation with how they are inputted into workspace to avoid line being too long as described by PEP8 validator - **Resolved** by correct use of quotation marks, indentation and new line characters (\n), I managed to resolve all my display issues on the deployed site.
 
 ## Credits
 
