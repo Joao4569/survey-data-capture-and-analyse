@@ -35,7 +35,7 @@ def capture_survey_data():
     and return validated survey ratings.
     """
     # Instructions to user for required input.
-    print("Please enter survey results below, as per the following"
+    print("Please enter survey ratings below, as per the following"
           " instructions:\n")
     print("Only one rating of between 0 and 10 for each of the four"
           " catergories,\n")
@@ -80,12 +80,11 @@ def data_validator(user_values):
         # Check that excatly 4 values are provided
         if len(user_values) != 4:
             raise ValueError(
-                f"""Four values are required, you only provided {len(user_values
-                )}"""
+                "4 values are required, you only provided"
+                f"{len(user_values)}"
             )
     except ValueError as e:
-        print(f"""\nInvalid results supplied, {e}, \nplease re-enter your
-            results.\n""")
+        print(f"\nInvalid ratings supplied, {e}, \nplease try again.\n")
         return False
 
     return True
@@ -124,5 +123,5 @@ def main():
     update_survey_worksheet(survey_data)
 
 
-print("Welcome to Survey Data processor")
+print("Welcome to Survey Data processor\n")
 main()
