@@ -119,6 +119,41 @@ def update_survey_worksheet(survey_data):
     print(CGREEN + "Survey data captured successfully.\n" + CEND)
 
 
+def survey_summary_generator():
+
+    # Get all data from captured surveys
+    all_survey_data = SHEET.worksheet("Survey_Results").get_all_values()
+
+    # Get all column titles
+    headings = all_survey_data.pop(0)
+    
+    # Get total number of surveys captured
+    total_surveys = all_survey_data[-1][-1]
+    print(total_surveys)
+    print(headings)
+    print(all_survey_data)
+
+
+    score1 = []
+    score2 = []
+    score3 = []
+    score4 = []
+    count = 0
+    for list_of_data in all_survey_data:
+        score1.append(int(list_of_data[0]))
+        score2.append(int(list_of_data[1]))
+        score3.append(int(list_of_data[2]))
+        score4.append(int(list_of_data[3]))
+        count += 1
+
+    print(score1)
+    print(score2)
+    print(score3)
+    print(score4)
+    print(count)
+    print(headings[0])
+
+
 def main():
     """
     Run all program functions
@@ -129,5 +164,6 @@ def main():
     update_survey_worksheet(survey_data)
 
 
-print(CBOLD + "\nWelcome to Survey Data processor\n" + CEND)
-main()
+# print(CBOLD + "\nWelcome to Survey Data processor\n" + CEND)
+# main()
+survey_summary_generator()
