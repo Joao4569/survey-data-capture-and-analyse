@@ -34,17 +34,17 @@ def capture_survey_data():
     This will instruct and capture user input
     and return validated survey ratings.
     """
-    # Instructions to user for required input.
-    print("Please enter survey ratings below, as per the following"
-          " instructions:\n")
-    print("Only one rating of between 0 and 10 for each of the four"
-          " catergories,\n")
-    print("In the following order of catergories - \n(Ease of use),"
-          "(Design),(Features),(Overall Satisfaction).\n")
-    print("Each seperated by a comma and without any spaces in"
-          "between. i.e. 6,7,5,8\n")
-
     while True:
+        # Instructions to user for required input.
+        print("Please enter survey ratings below, as per the following"
+            " instructions:\n")
+        print("Only one rating of between 0 and 10 for each of the four"
+            " catergories,\n")
+        print("In the following order of catergories - \n(Ease of use),"
+            "(Design),(Features),(Overall Satisfaction).\n")
+        print("Each seperated by a comma and without any spaces in"
+            "between. i.e. 6,7,5,8\n")
+
         # Get user input as a string.
         survey_result_manual_input_str = input("Please enter ratings here: \n")
 
@@ -73,18 +73,18 @@ def data_validator(user_values):
             if int(user_value) >= 0 and int(user_value) <= 10:
                 continue
             else:
-                raise ValueError("""One or more of your inputs was greater than
-                                10 or less than 0, only values between 0 and 10
-                                will be accepted""")
+                raise ValueError("One or more of your inputs was greater than"
+                                " 10 or less than 0, only values between 0 and 10"
+                                " will be accepted")
 
         # Check that excatly 4 values are provided
         if len(user_values) != 4:
             raise ValueError(
                 "4 values are required, you only provided"
-                f"{len(user_values)}"
+                f" {len(user_values)}"
             )
     except ValueError as e:
-        print(f"\nInvalid ratings supplied, {e}, \nplease try again.\n")
+        print(f"\nInvalid ratings supplied, {e}, \nPlease try again.\n")
         return False
 
     return True
