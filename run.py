@@ -1,26 +1,12 @@
 """
-Import system and name functions from OS library and sleep function from time library
-in order to allow clear screen and sleep functionality as sourced on 
-https://www.geeksforgeeks.org/clear-screen-python/ - credited in README
+Imported in order to allow clear screen and sleep functionality
+Sourced from https://www.geeksforgeeks.org/clear-screen-python/
 """
 from os import system, name
 from time import sleep
 
-
-def clear():
-  
-    # for windows
-    if name == 'nt':
-        _ = system('cls')
-  
-    # for mac and linux(here, os.name is 'posix')
-    else:
-        _ = system('clear')
-
-"""
-Code below was sourced from Code Institutes "Love Sandwiches Walkthrough
-Project", "Getting Set Up" course videos
-"""
+# Code below was sourced from Code Institutes "Love Sandwiches Walkthrough
+# Project", "Getting Set Up" course videos
 
 # Import gspread library in order to access and update data on spreadsheet.
 import gspread
@@ -51,6 +37,21 @@ CGREEN = '\33[32m'
 CYELLOW = '\33[33m'
 CBOLD = '\33[1m'
 CEND = '\033[0m'
+
+
+def clear():
+    """
+    This is a function sourced from
+    https://www.geeksforgeeks.org/clear-screen-python/ for clearing the
+    terminal window.
+    """
+    # for windows
+    if name == 'nt':
+        _ = system('cls')
+
+    # for mac and linux(here, os.name is 'posix')
+    else:
+        _ = system('clear')
 
 
 def capture_survey_data():
@@ -106,7 +107,8 @@ def data_validator(user_values, capture_survey):
                 continue
             else:
                 raise ValueError("One or more of your inputs was greater than"
-                                 f" {max_value} or less\n than {min_value}, only"
+                                 f" {max_value} or less\n than"
+                                 f" {min_value}, only"
                                  f" values between {min_value}"
                                  f" and {max_value} will be accepted")
 
@@ -205,8 +207,8 @@ def select_function():
     """
     while True:
         print("\n Please select what you would like to do:\n"
-            "\n 1) Capture a customer's survey\n"
-            " 2) View a summary of survey results\n")
+              "\n 1) Capture a customer's survey\n"
+              " 2) View a summary of survey results\n")
         user_selection = input("Please enter either 1 or 2: \n")
         if data_validator(user_selection, False):
             if user_selection == "1":
@@ -228,5 +230,6 @@ def main():
     select_function()
 
 
-print(CBOLD + "\n Welcome to Survey Data Processor\n" + CEND + "\n Please click on this terminal")
+print(CBOLD + "\n Welcome to Survey Data Processor\n" + CEND + "\n Please"
+      " click on this terminal")
 main()
