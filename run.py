@@ -143,9 +143,6 @@ def survey_summary_generator():
     # Get total number of surveys captured
     total_surveys = int(all_survey_data[-1][-1])
 
-    print(total_surveys)
-    print(all_survey_data)
-
     # Get ratings captured for each question in the survey
     for x in range(1, 5):
         question_data = summary_sheet.col_values(x)
@@ -182,7 +179,6 @@ def select_function():
             "2) View a summary of survey results\n")
         user_selection = input("Please enter either 1 or 2: \n")
         if data_validator(user_selection, False):
-            print(type(user_selection))
             if user_selection == "1":
                 verified_user_data = capture_survey_data()
                 survey_data = [int(score) for score in verified_user_data]
