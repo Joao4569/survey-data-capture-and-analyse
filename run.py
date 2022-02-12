@@ -165,6 +165,9 @@ def survey_summary_generator():
               f"% - Satisfied,  {int((extremely_satisfied / total_surveys) * 100)}"
               f"% - Extremely Satisfied")
 
+    input('\nPlease press the "Enter" key to continue')
+    main()
+
 
 def select_function():
     """
