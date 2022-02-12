@@ -64,8 +64,8 @@ def capture_survey_data():
               " instructions:\n")
         print(" Only one rating of between 0 and 10 for each of the four"
               " catergories,\n")
-        print(" In the following order:\n      (Ease of use),"
-              "(Design),(Features),(Overall Satisfaction).\n")
+        print(" In the following order:\n\n         (Ease of use),"
+              "(Design),(Features),(Overall Satisfaction)\n")
         print(" Each seperated by a comma and without any spaces in-"
               "between. i.e. 6,7,5,8\n")
 
