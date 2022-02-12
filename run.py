@@ -70,7 +70,7 @@ def capture_survey_data():
               "between. i.e. 6,7,5,8\n")
 
         # Get user input as a string.
-        survey_result_manual_input_str = input(" Please enter ratings here: \n")
+        survey_result_manual_input_str = input("Please enter ratings here: \n")
 
         # Change user input string to a list.
         extracted_survey_results = survey_result_manual_input_str.split(",")
@@ -194,7 +194,7 @@ def survey_summary_generator():
               f"% Pleased | {int((extremely_satisfied / total_surveys) * 100)}"
               f"% Extremely Pleased")
 
-    input('\n Please press the "Enter" key to continue\n')
+    input('\nPlease press the "Enter" key to continue\n')
     clear()
     main()
 
@@ -207,7 +207,7 @@ def select_function():
         print("\n Please select what you would like to do:\n"
             "\n 1) Capture a customer's survey\n"
             " 2) View a summary of survey results\n")
-        user_selection = input(" Please enter either 1 or 2: \n")
+        user_selection = input("Please enter either 1 or 2: \n")
         if data_validator(user_selection, False):
             if user_selection == "1":
                 clear()
