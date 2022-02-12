@@ -130,7 +130,7 @@ def allocate_survey_capture_number():
     This will extract the last captured survey registry number and allocate
     the next consecutive number to the captured results
     """
-    print(CYELLOW + "Allocating survey registry number....\n" + CEND)
+    print(CYELLOW + " Allocating survey registry number....\n" + CEND)
     survey_register = SHEET.worksheet("Survey_Results").get_all_values()
     last_captured_rating = survey_register[-1][4]
     new_survey_capture_number = int(last_captured_rating) + 1
@@ -168,7 +168,7 @@ def survey_summary_generator():
     total_surveys = int(all_survey_data[-1][-1])
 
     clear()
-    print(f" Out of {total_surveys} Surveys captured")
+    print(f"\n Out of {total_surveys} Surveys captured")
 
     # Get ratings captured for each question in the survey
     for x in range(1, 5):
