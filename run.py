@@ -160,8 +160,14 @@ def survey_summary_generator():
         print(CGREEN + f"{int((satisfied / total_surveys) * 100)}"
               "%" + CEND + " Satisfied\n")
         print(CYELLOW + f"{int((extremely_satisfied / total_surveys) * 100)}"
-              "%" + CEND + " Extremely Satisfied\n")
+            "%" + CEND + " Extremely Satisfied\n")
 
+
+def select_function():
+    print("Please select what you would like to do:\n"
+          "1) Enter survey rating\n"
+          "2) View a summary of survey results\n")
+    user_selection = input("Please enter either 1 or 2: \n")
 
 
 def main():
@@ -174,6 +180,5 @@ def main():
     update_survey_worksheet(survey_data)
 
 
-# print(CBOLD + "\nWelcome to Survey Data processor\n" + CEND)
-# main()
-survey_summary_generator()
+print(CBOLD + "\nWelcome to Survey Data processor\n" + CEND)
+main()
