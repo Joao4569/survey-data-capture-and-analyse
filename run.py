@@ -142,22 +142,25 @@ def survey_summary_generator():
         question_data = summary_sheet.col_values(x)
         question = question_data.pop(0)
         ratings = question_data
-        print(f"{question} :\n")
 
         # Parse ratings and filter results for summary
-        poor = 0
-        average = 0
-        excellent = 0
+        unsatisfied = 0
+        satisfied = 0
+        extremely_satisfied = 0
         for rating in ratings:
             if int(rating) >= 0 and int(rating) <= 3:
-                poor += 1
+                unsatisfied += 1
             elif int(rating) >= 4 and int(rating) <= 7:
-                average += 1
+                satisfied += 1
             else:
-                excellent += 1
-        print(f"Poor = {int((poor / total_surveys) * 100)}%\n"
-              f"Average = {int((average / total_surveys) * 100)}%\n"
-              f"Excellent = {int((excellent / total_surveys) * 100)}%\n")
+                extremely_satisfied += 1
+        print("\n" + CBOLD + f"{question}:" + CEND + "\n")
+        print(CRED + f"{int((unsatisfied / total_surveys) * 100)}"
+              "%" + CEND + " Unsatisfied\n")
+        print(CGREEN + f"{int((satisfied / total_surveys) * 100)}"
+              "%" + CEND + " Satisfied\n")
+        print(CYELLOW + f"{int((extremely_satisfied / total_surveys) * 100)}"
+              "%" + CEND + " Extremely Satisfied\n")
 
 
 
