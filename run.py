@@ -157,6 +157,7 @@ def survey_summary_generator():
     filter through them in order to generate a summary of
     customer satisfaction.
     """
+
     # Store sheet in a variable
     summary_sheet = SHEET.worksheet("Survey_Results")
 
@@ -166,6 +167,9 @@ def survey_summary_generator():
     # Get total number of surveys captured
     total_surveys = int(all_survey_data[-1][-1])
 
+    clear()
+    print(f"Out of {total_surveys} Surveys captured")
+    
     # Get ratings captured for each question in the survey
     for x in range(1, 5):
         question_data = summary_sheet.col_values(x)
@@ -183,10 +187,12 @@ def survey_summary_generator():
                 satisfied += 1
             else:
                 extremely_satisfied += 1
-        print(CBOLD + f"\n{question}: " + CEND + f"{int((unsatisfied / total_surveys) * 100)}"
-              f"% - Not Satisfied,  {int((satisfied / total_surveys) * 100)}"
-              f"% - Satisfied,  {int((extremely_satisfied / total_surveys) * 100)}"
-              f"% - Extremely Satisfied")
+
+        print(CBOLD + f"\n{question}"
+              ":\n" + CEND + f"\n{int((unsatisfied / total_surveys) * 100)}"
+              f"% Dissappointed | {int((satisfied / total_surveys) * 100)}"
+              f"% Pleased | {int((extremely_satisfied / total_surveys) * 100)}"
+              f"% Extremely Pleased")
 
     input('\nPlease press the "Enter" key to continue')
     clear()
@@ -198,8 +204,8 @@ def select_function():
     ADD DOCSTRING
     """
     while True:
-        print("Please select what you would like to do:\n"
-            "1) Capture a customer's survey\n"
+        print("\nPlease select what you would like to do:\n"
+            "\n1) Capture a customer's survey\n"
             "2) View a summary of survey results\n")
         user_selection = input("Please enter either 1 or 2: \n")
         if data_validator(user_selection, False):
@@ -222,5 +228,5 @@ def main():
     select_function()
 
 
-print(CBOLD + "\nWelcome to Survey Data Processor\n" + CEND)
+print(CBOLD + "\nWelcome to Survey Data Processor\n" + CEND + "\nPlease click on this terminal")
 main()
