@@ -84,6 +84,7 @@ Here is the live link [Survey Data Capture and Extraction Application](https://s
 - Code institutes Course material was essential for setting up a workspace and deployment of the program on [Heroku](https://id.heroku.com/login).
 - I sourced the code for printing coloured text to the terminal from [lycaeum.dev](https://lycaeum.dev/en/questions/287871).
 - I researched and made use of basic Markdown syntax sourced on [markdownguide.org](https://www.markdownguide.org/basic-syntax/).
+- I sourced a solution on how to allow messages on the terminal to sleep if needed as well as a solution for clearing the terminal when needed from [geeksforgeeks.org](https://www.geeksforgeeks.org/clear-screen-python/)
 
 
 ### Content
