@@ -121,10 +121,13 @@ def update_survey_worksheet(survey_data):
 
 def survey_summary_generator():
     """
-    This will retrieve the questions asked in the survey.........
+    This will extract all the ratings captured by question and
+    filter through them in order to generate a summary of
+    customer satisfaction.
     """
-
+    # Store sheet in a variable
     summary_sheet = SHEET.worksheet("Survey_Results")
+
     # Get all data from captured surveys
     all_survey_data = summary_sheet.get_all_values()
 
@@ -134,11 +137,14 @@ def survey_summary_generator():
     print(total_surveys)
     print(all_survey_data)
 
+    # Get ratings captured for each question in the survey
     for x in range(1, 5):
         question_data = summary_sheet.col_values(x)
         question = question_data.pop(0)
         ratings = question_data
         print(f"{question} :\n")
+
+        # Parse ratings and filter results for summary
         poor = 0
         average = 0
         excellent = 0
