@@ -60,24 +60,24 @@ def capture_survey_data():
     """
     while True:
         # Instructions to user for required input.
-        print("Please enter survey scores below, as per the following"
+        print("\n Please enter survey scores below, as per the following"
               " instructions:\n")
-        print("Only one rating of between 0 and 10 for each of the four"
+        print(" Only one rating of between 0 and 10 for each of the four"
               " catergories,\n")
-        print("In the following order:\n (Ease of use),"
+        print(" In the following order:\n      (Ease of use),"
               "(Design),(Features),(Overall Satisfaction).\n")
-        print("Each seperated by a comma and without any spaces in-"
+        print(" Each seperated by a comma and without any spaces in-"
               "between. i.e. 6,7,5,8\n")
 
         # Get user input as a string.
-        survey_result_manual_input_str = input("Please enter ratings here: \n")
+        survey_result_manual_input_str = input(" Please enter ratings here: \n")
 
         # Change user input string to a list.
         extracted_survey_results = survey_result_manual_input_str.split(",")
 
         # Confirm to user that input was correct and break while loop.
         if data_validator(extracted_survey_results, True):
-            print(CGREEN + "Valid entry accepted!\n" + CEND)
+            print(CGREEN + " Valid entry accepted!\n" + CEND)
             break
 
     return extracted_survey_results
@@ -106,7 +106,7 @@ def data_validator(user_values, capture_survey):
                 continue
             else:
                 raise ValueError("One or more of your inputs was greater than"
-                                 f" {max_value} or less than {min_value}, only"
+                                 f" {max_value} or less\n than {min_value}, only"
                                  f" values between {min_value}"
                                  f" and {max_value} will be accepted")
 
@@ -118,8 +118,8 @@ def data_validator(user_values, capture_survey):
             )
     except ValueError as e:
         clear()
-        print(CRED + f"\nInvalid value supplied, {e}, \n"
-              "Please try again.\n" + CEND)
+        print(CRED + f"\n Invalid value supplied, {e}, \n"
+              " Please try again.\n" + CEND)
         return False
 
     return True
@@ -142,10 +142,10 @@ def update_survey_worksheet(survey_data):
     Update survey worksheet by adding a new row to the worksheet
     with the validated data list inputed by the user.
     """
-    print(CYELLOW + "Updating survey data to worksheet.....\n" + CEND)
+    print(CYELLOW + " Updating survey data to worksheet.....\n" + CEND)
     survey_worksheet = SHEET.worksheet("Survey_Results")
     survey_worksheet.append_row(survey_data)
-    print(CGREEN + "Survey data captured successfully.\n" + CEND)
+    print(CGREEN + " Survey data captured successfully.\n" + CEND)
     sleep(2)
     clear()
     main()
@@ -168,8 +168,8 @@ def survey_summary_generator():
     total_surveys = int(all_survey_data[-1][-1])
 
     clear()
-    print(f"Out of {total_surveys} Surveys captured")
-    
+    print(f" Out of {total_surveys} Surveys captured")
+
     # Get ratings captured for each question in the survey
     for x in range(1, 5):
         question_data = summary_sheet.col_values(x)
@@ -188,13 +188,13 @@ def survey_summary_generator():
             else:
                 extremely_satisfied += 1
 
-        print(CBOLD + f"\n{question}"
-              ":\n" + CEND + f"\n{int((unsatisfied / total_surveys) * 100)}"
+        print(CBOLD + f"\n {question}"
+              ":\n" + CEND + f"\n {int((unsatisfied / total_surveys) * 100)}"
               f"% Dissappointed | {int((satisfied / total_surveys) * 100)}"
               f"% Pleased | {int((extremely_satisfied / total_surveys) * 100)}"
               f"% Extremely Pleased")
 
-    input('\nPlease press the "Enter" key to continue')
+    input('\n Please press the "Enter" key to continue\n')
     clear()
     main()
 
@@ -204,10 +204,10 @@ def select_function():
     ADD DOCSTRING
     """
     while True:
-        print("\nPlease select what you would like to do:\n"
-            "\n1) Capture a customer's survey\n"
-            "2) View a summary of survey results\n")
-        user_selection = input("Please enter either 1 or 2: \n")
+        print("\n Please select what you would like to do:\n"
+            "\n 1) Capture a customer's survey\n"
+            " 2) View a summary of survey results\n")
+        user_selection = input(" Please enter either 1 or 2: \n")
         if data_validator(user_selection, False):
             if user_selection == "1":
                 clear()
