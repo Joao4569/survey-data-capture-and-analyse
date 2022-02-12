@@ -117,6 +117,7 @@ def data_validator(user_values, capture_survey):
                 f" {len(user_values)}"
             )
     except ValueError as e:
+        clear()
         print(CRED + f"\nInvalid value supplied, {e}, \n"
               "Please try again.\n" + CEND)
         return False
@@ -185,6 +186,7 @@ def survey_summary_generator():
               f"% - Extremely Satisfied")
 
     input('\nPlease press the "Enter" key to continue')
+    clear()
     main()
 
 
@@ -199,6 +201,7 @@ def select_function():
         user_selection = input("Please enter either 1 or 2: \n")
         if data_validator(user_selection, False):
             if user_selection == "1":
+                clear()
                 verified_user_data = capture_survey_data()
                 survey_data = [int(score) for score in verified_user_data]
                 survey_data.append(allocate_survey_capture_number())
