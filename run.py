@@ -173,20 +173,32 @@ def survey_summary_generator():
 
 
 def select_function():
-    print("Please select what you would like to do:\n"
-          "1) Enter survey rating\n"
-          "2) View a summary of survey results\n")
-    user_selection = input("Please enter either 1 or 2: \n")
+    """
+    ADD DOCSTRING
+    """
+    while True:
+        print("Please select what you would like to do:\n"
+            "1) Enter survey rating\n"
+            "2) View a summary of survey results\n")
+        user_selection = input("Please enter either 1 or 2: \n")
+        if data_validator(user_selection, False):
+            print(type(user_selection))
+            if user_selection == "1":
+                verified_user_data = capture_survey_data()
+                survey_data = [int(score) for score in verified_user_data]
+                survey_data.append(allocate_survey_capture_number())
+                update_survey_worksheet(survey_data)
+                break
+            else:
+                survey_summary_generator()
+                break
 
 
 def main():
     """
     Run all program functions
     """
-    verified_user_data = capture_survey_data()
-    survey_data = [int(score) for score in verified_user_data]
-    survey_data.append(allocate_survey_capture_number())
-    update_survey_worksheet(survey_data)
+    select_function()
 
 
 print(CBOLD + "\nWelcome to Survey Data processor\n" + CEND)
