@@ -228,5 +228,5 @@ def main():
     select_function()
 
 
-print(CBOLD + "\nWelcome to Survey Data Processor\n" + CEND + "\nPlease click on this terminal")
+print(CBOLD + "\n Welcome to Survey Data Processor\n" + CEND + "\n Please click on this terminal")
 main()
