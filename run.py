@@ -146,6 +146,9 @@ def update_survey_worksheet(survey_data):
     survey_worksheet = SHEET.worksheet("Survey_Results")
     survey_worksheet.append_row(survey_data)
     print(CGREEN + "Survey data captured successfully.\n" + CEND)
+    sleep(2)
+    clear()
+    main()
 
 
 def survey_summary_generator():
