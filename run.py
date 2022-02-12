@@ -41,13 +41,13 @@ def capture_survey_data():
     """
     while True:
         # Instructions to user for required input.
-        print("Please enter survey ratings below, as per the following"
+        print("Please enter survey scores below, as per the following"
               " instructions:\n")
         print("Only one rating of between 0 and 10 for each of the four"
               " catergories,\n")
-        print("In the following order of catergories - \n(Ease of use),"
+        print("In the following order:\n (Ease of use),"
               "(Design),(Features),(Overall Satisfaction).\n")
-        print("Each seperated by a comma and without any spaces in"
+        print("Each seperated by a comma and without any spaces in-"
               "between. i.e. 6,7,5,8\n")
 
         # Get user input as a string.
@@ -89,7 +89,7 @@ def data_validator(user_values, capture_survey):
                 raise ValueError("One or more of your inputs was greater than"
                                  f" {max_value} or less than {min_value}, only"
                                  f" values between {min_value}"
-                                 f"and {max_value} will be accepted")
+                                 f" and {max_value} will be accepted")
 
         # Check that correct amount of values are provided
         if len(user_values) != amount_of_values:
@@ -98,7 +98,7 @@ def data_validator(user_values, capture_survey):
                 f" {len(user_values)}"
             )
     except ValueError as e:
-        print(CRED + f"\nInvalid ratings supplied, {e}, \n"
+        print(CRED + f"\nInvalid value supplied, {e}, \n"
               "Please try again.\n" + CEND)
         return False
 
@@ -160,13 +160,10 @@ def survey_summary_generator():
                 satisfied += 1
             else:
                 extremely_satisfied += 1
-        print("\n" + CBOLD + f"{question}:" + CEND + "\n")
-        print(CRED + f"{int((unsatisfied / total_surveys) * 100)}"
-              "%" + CEND + " Unsatisfied\n")
-        print(CGREEN + f"{int((satisfied / total_surveys) * 100)}"
-              "%" + CEND + " Satisfied\n")
-        print(CYELLOW + f"{int((extremely_satisfied / total_surveys) * 100)}"
-            "%" + CEND + " Extremely Satisfied\n")
+        print(CBOLD + f"\n{question}: " + CEND + f"{int((unsatisfied / total_surveys) * 100)}"
+              f"% - Not Satisfied,  {int((satisfied / total_surveys) * 100)}"
+              f"% - Satisfied,  {int((extremely_satisfied / total_surveys) * 100)}"
+              f"% - Extremely Satisfied")
 
 
 def select_function():
@@ -175,7 +172,7 @@ def select_function():
     """
     while True:
         print("Please select what you would like to do:\n"
-            "1) Enter survey rating\n"
+            "1) Capture a customer's survey\n"
             "2) View a summary of survey results\n")
         user_selection = input("Please enter either 1 or 2: \n")
         if data_validator(user_selection, False):
@@ -197,5 +194,5 @@ def main():
     select_function()
 
 
-print(CBOLD + "\nWelcome to Survey Data processor\n" + CEND)
+print(CBOLD + "\nWelcome to Survey Data Processor\n" + CEND)
 main()
