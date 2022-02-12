@@ -57,35 +57,44 @@ def capture_survey_data():
         extracted_survey_results = survey_result_manual_input_str.split(",")
 
         # Confirm to user that input was correct and break while loop.
-        if data_validator(extracted_survey_results):
+        if data_validator(extracted_survey_results, True):
             print(CGREEN + "Valid entry accepted!\n" + CEND)
             break
 
     return extracted_survey_results
 
 
-def data_validator(user_values):
+def data_validator(user_values, capture_survey):
     """
     This will try to convert all string values into integers, check that all
     integers are betweeen 0 and 10 and also check if exactly 4 values were
     supplied. If any of these conditions are not met then specific
     ValueError's will be raised.
     """
+    if capture_survey:
+        min_value = 0
+        max_value = 10
+        amount_of_values = 4
+    else:
+        min_value = 1
+        max_value = 2
+        amount_of_values = 1
     try:
         for user_value in user_values:
 
             # Check that all values provided are between 0 and 10.
-            if int(user_value) >= 0 and int(user_value) <= 10:
+            if int(user_value) >= min_value and int(user_value) <= max_value:
                 continue
             else:
                 raise ValueError("One or more of your inputs was greater than"
-                                 " 10 or less than 0, only values between 0"
-                                 "and 10 will be accepted")
+                                 f" {max_value} or less than {min_value}, only"
+                                 f" values between {min_value}"
+                                 f"and {max_value} will be accepted")
 
-        # Check that excatly 4 values are provided
-        if len(user_values) != 4:
+        # Check that correct amount of values are provided
+        if len(user_values) != amount_of_values:
             raise ValueError(
-                "4 values are required, you only provided"
+                f"{amount_of_values} values are required, you provided"
                 f" {len(user_values)}"
             )
     except ValueError as e:
