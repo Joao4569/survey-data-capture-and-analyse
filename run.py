@@ -1,4 +1,23 @@
 """
+Import system and name functions from OS library and sleep function from time library
+in order to allow clear screen and sleep functionality as sourced on 
+https://www.geeksforgeeks.org/clear-screen-python/ - credited in README
+"""
+from os import system, name
+from time import sleep
+
+
+def clear():
+  
+    # for windows
+    if name == 'nt':
+        _ = system('cls')
+  
+    # for mac and linux(here, os.name is 'posix')
+    else:
+        _ = system('clear')
+
+"""
 Code below was sourced from Code Institutes "Love Sandwiches Walkthrough
 Project", "Getting Set Up" course videos
 """
