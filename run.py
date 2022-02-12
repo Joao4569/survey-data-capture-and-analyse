@@ -120,38 +120,39 @@ def update_survey_worksheet(survey_data):
 
 
 def survey_summary_generator():
+    """
+    This will retrieve the questions asked in the survey.........
+    """
 
+    summary_sheet = SHEET.worksheet("Survey_Results")
     # Get all data from captured surveys
-    all_survey_data = SHEET.worksheet("Survey_Results").get_all_values()
+    all_survey_data = summary_sheet.get_all_values()
 
-    # Get all column titles
-    headings = all_survey_data.pop(0)
-    
     # Get total number of surveys captured
-    total_surveys = all_survey_data[-1][-1]
+    total_surveys = int(all_survey_data[-1][-1])
+
     print(total_surveys)
-    print(headings)
     print(all_survey_data)
 
+    for x in range(1, 5):
+        question_data = summary_sheet.col_values(x)
+        question = question_data.pop(0)
+        ratings = question_data
+        print(f"{question} :\n")
+        poor = 0
+        average = 0
+        excellent = 0
+        for rating in ratings:
+            if int(rating) >= 0 and int(rating) <= 3:
+                poor += 1
+            elif int(rating) >= 4 and int(rating) <= 7:
+                average += 1
+            else:
+                excellent += 1
+        print(f"Poor = {int((poor / total_surveys) * 100)}%\n"
+              f"Average = {int((average / total_surveys) * 100)}%\n"
+              f"Excellent = {int((excellent / total_surveys) * 100)}%\n")
 
-    score1 = []
-    score2 = []
-    score3 = []
-    score4 = []
-    count = 0
-    for list_of_data in all_survey_data:
-        score1.append(int(list_of_data[0]))
-        score2.append(int(list_of_data[1]))
-        score3.append(int(list_of_data[2]))
-        score4.append(int(list_of_data[3]))
-        count += 1
-
-    print(score1)
-    print(score2)
-    print(score3)
-    print(score4)
-    print(count)
-    print(headings[0])
 
 
 def main():
