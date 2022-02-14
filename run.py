@@ -67,7 +67,7 @@ def capture_survey_data():
               " catergories,\n")
         print(" In the following order:\n\n         (Ease of use),"
               "(Design),(Features),(Overall Satisfaction)\n")
-        print(" Each seperated by a comma and without any spaces in-"
+        print(" Each seperated by a comma and without any open spaces in-"
               "between. i.e. 6,7,5,8\n")
 
         # Get user input as a string.
