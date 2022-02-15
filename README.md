@@ -6,7 +6,9 @@
 
 - Here is an overview of the intial concept:
 
+
 ![initial_flowchart](assets/images/screenshots/complete_lucid_chart.png)
+
 
 I decided to create a data processor for capturing and processing survey data of a customer satifaction questionaire for a ficticious new cellphone that was launched. It must allow users to input survey ratings, validate the users input, allocate the data with an entry number, store the validated data on Google Sheets while also allowing the user to get a summary report of captured and stored data from the surveys captured. I also wanted to create a function that would create generic survey data for filling the worksheet with data to process and add the functionality for the user to email the summary results.
 
@@ -14,7 +16,9 @@ I decided to create a data processor for capturing and processing survey data of
 
 - This was now the scope of my project:
 
-![actual_flowchart](assets/images/screenshots/complete_lucid_chart.png)
+
+![actual_flowchart](assets/images/screenshots/actual_lucid_chart.png)
+
 
 ## Setup of Gitpod Workspace and resources
 
@@ -28,6 +32,22 @@ I made use of Code Institutes "Love Sandwiches Walkthrough Project", "Getting Se
 
 ### Existing Features
 
+- When initializing the program, the user is dispalyed a welcome message, instructions and options either to capture a customer survey or view a summary of the results captured thus far.
+
+
+![welcome_screen](assets/images/screenshots/welcome_screen.png)
+
+
+- User input is validated by the program and will display custom error messages that are highlighted in red if the user has made some form of invalid entry and the question will be repeated in the terminal.
+
+
+![welcome_invalid_input](assets/images/screenshots/welcome_invalid_entry.png)
+
+
+- If the user selects the first option and presses enter, instructions for capturing a survey are presented to the user.
+
+
+![instructions_survey_entry](assets/images/screenshots/instructions_survey_entry.png)
 ## Testing
 
 - Made use of the terminal window and print function on multiple occasions in order to view data and check if functions work as expected.
