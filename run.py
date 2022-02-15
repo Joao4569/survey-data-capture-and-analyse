@@ -197,7 +197,7 @@ def survey_summary_generator():
               "% Dissappointed (0 - 3) | "
               f"{int((satisfied / total_surveys) * 100)} % Pleased (4 - 7) | "
               f"{int((extremely_satisfied / total_surveys) * 100)}"
-              "% Extremely Pleased (8 - 10)")
+              "% Very Pleased (8 - 10)")
 
     input('\nPlease press the "Enter" key to return to home screen\n')
     clear()
