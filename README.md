@@ -1,9 +1,20 @@
-# Survey Data Analyser
+# Survey Data Processor
 
 ## Conception
 
-- Lucidchart chart and planning
+- My first step was to create a flow diagram of my scope for the Survey Data Processor concept.
 
+- Here is an overview of the intial concept:
+
+![initial_flowchart](assets/images/screenshots/complete_lucid_chart.png)
+
+I decided to create a data processor for capturing and processing survey data of a customer satifaction questionaire for a ficticious new cellphone that was launched. It must allow users to input survey ratings, validate the users input, allocate the data with an entry number, store the validated data on Google Sheets while also allowing the user to get a summary report of captured and stored data from the surveys captured. I also wanted to create a function that would create generic survey data for filling the worksheet with data to process and add the functionality for the user to email the summary results.
+
+- After my project conception session with my mentor, we decided to proceed without the functiontionality to create generic survey data and email the summarised results, reason being that he thought it might be a bit ambitious with the amount of time at hand. I am now very greatfull for his input.
+
+- This was now the scope of my project:
+
+![actual_flowchart](assets/images/screenshots/complete_lucid_chart.png)
 
 ## Setup of Gitpod Workspace and resources
 
@@ -82,6 +93,7 @@ Here is the live link [Survey Data Capture and Extraction Application](https://s
 
 - First and foremost I would like to thank my mentor Anthony for his valuable input.
 - Code institutes Course material was essential for setting up a workspace and deployment of the program on [Heroku](https://id.heroku.com/login).
+- I made use of [Lucidchart](https://www.lucidchart.com/pages/) to create the flow diagrams for the palnning of my project.
 - I sourced the code for printing coloured text to the terminal from [lycaeum.dev](https://lycaeum.dev/en/questions/287871).
 - I researched and made use of basic Markdown syntax sourced on [markdownguide.org](https://www.markdownguide.org/basic-syntax/).
 - I sourced a solution on how to allow messages on the terminal to sleep if needed as well as a solution for clearing the terminal when needed from [geeksforgeeks.org](https://www.geeksforgeeks.org/clear-screen-python/)
