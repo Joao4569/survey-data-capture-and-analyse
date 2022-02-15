@@ -48,6 +48,23 @@ I made use of Code Institutes "Love Sandwiches Walkthrough Project", "Getting Se
 
 
 ![instructions_survey_entry](assets/images/screenshots/instructions_survey_entry.png)
+
+- If the user makes an invalid entry, the user will be presented with a custom error message highlighted in red and the instructions will be repeated on the terminal.
+
+![error_sample1](assets/images/screenshots/survey_entry_sample_more_than_ten.png)
+
+![error_sample2](assets/images/screenshots/survey_entry_sample_string.png)
+
+![error_sample_and_instructions](assets/images/screenshots/survey_entry_invalid_less_than_4.png)
+
+- Once a valid entry is provided, the user will be presented with feedback of the running processes taking place and returned to the home screen.
+
+
+![survey_valid_entry](assets/images/screenshots/survey_entry_valid.png)
+
+![homescreen](assets/images/screenshots/home_screen.png)
+
+
 ## Testing
 
 - Made use of the terminal window and print function on multiple occasions in order to view data and check if functions work as expected.
