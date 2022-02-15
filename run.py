@@ -61,9 +61,9 @@ def capture_survey_data():
     """
     while True:
         # Instructions to user for required input.
-        print("\n Please enter survey scores below, as per the following"
+        print("\n Please enter survey ratings below, as per the following"
               " instructions:\n")
-        print(" Only one rating of between 0 and 10 for each of the four"
+        print(" Only 1 rating of between 0 - 10 for each of the four"
               " catergories,\n")
         print(" In the following order:\n\n         (Ease of use),"
               "(Design),(Features),(Overall Satisfaction)\n")
@@ -71,14 +71,15 @@ def capture_survey_data():
               "between. i.e. 6,7,5,8\n")
 
         # Get user input as a string.
-        survey_result_manual_input_str = input("Please enter ratings here: \n")
+        survey_result_manual_input_str = input("Please enter ratings here"
+                                               " then press enter: \n")
 
         # Change user input string to a list.
         extracted_survey_results = survey_result_manual_input_str.split(",")
 
         # Confirm to user that input was correct and break while loop.
         if data_validator(extracted_survey_results, True):
-            print(CGREEN + " Valid entry accepted!\n" + CEND)
+            print(CGREEN + "\n Valid entry accepted!\n" + CEND)
             break
 
     return extracted_survey_results
@@ -148,7 +149,8 @@ def update_survey_worksheet(survey_data):
     survey_worksheet = SHEET.worksheet("Survey_Results")
     survey_worksheet.append_row(survey_data)
     print(CGREEN + " Survey data captured successfully.\n" + CEND)
-    sleep(2)
+    print(" Returning to home screen.....")
+    sleep(4)
     clear()
     main()
 
@@ -170,8 +172,7 @@ def survey_summary_generator():
     total_surveys = int(all_survey_data[-1][-1])
 
     clear()
-    print("\n Ratings")
-    print(f"\n Out of {total_surveys} Surveys captured")
+    print(CBOLD + f"\n Out of {total_surveys} Surveys captured" + CEND)
 
     # Get ratings captured for each question in the survey
     for x in range(1, 5):
@@ -193,11 +194,12 @@ def survey_summary_generator():
 
         print(CBOLD + f"\n {question}"
               ":\n" + CEND + f"\n {int((unsatisfied / total_surveys) * 100)}"
-              f"% Dissappointed | {int((satisfied / total_surveys) * 100)}"
-              f"% Pleased | {int((extremely_satisfied / total_surveys) * 100)}"
-              f"% Extremely Pleased")
+              "% Dissappointed (0 - 3) | "
+              f"{int((satisfied / total_surveys) * 100)} % Pleased (4 - 7) | "
+              f"{int((extremely_satisfied / total_surveys) * 100)}"
+              "% Extremely Pleased (8 - 10)")
 
-    input('\nPlease press the "Enter" key to continue\n')
+    input('\nPlease press the "Enter" key to return to home screen\n')
     clear()
     main()
 
@@ -210,7 +212,8 @@ def select_function():
         print("\n Please select what you would like to do:\n"
               "\n 1) Capture a customer's survey\n"
               " 2) View a summary of survey results\n")
-        user_selection = input("Please enter either 1 or 2: \n")
+        user_selection = input("Please enter either 1 or 2, "
+                               "then press enter: \n")
         if data_validator(user_selection, False):
             if user_selection == "1":
                 clear()
