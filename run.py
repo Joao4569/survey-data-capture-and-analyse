@@ -170,6 +170,7 @@ def survey_summary_generator():
     total_surveys = int(all_survey_data[-1][-1])
 
     clear()
+    print("\n Ratings")
     print(f"\n Out of {total_surveys} Surveys captured")
 
     # Get ratings captured for each question in the survey
