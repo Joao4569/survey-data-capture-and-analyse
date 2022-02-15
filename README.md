@@ -80,7 +80,7 @@ I made use of Code Institutes "Love Sandwiches Walkthrough Project", "Getting Se
 - When capturing a survey entry, once the program has validated the users inputs, the validated data is sent and saved to a predesigned worksheet with a self generated capture number allowcated.
 
 
- ![]()
+ ![worksheet_sample](assets/images/screenshots/worksheet.png)
 
 
  - When a user selects the option to view a summary of the captured survey results, the program fetches all the necessary data from the relevant cells in the worksheet and uses this stored data to calculate the summary results.
