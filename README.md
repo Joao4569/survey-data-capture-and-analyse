@@ -7,6 +7,7 @@ It is a program designed for capturing survey data from users and allowing users
 Survey Data Processor is useful by having the ability for a huge amount of survey data to be catergorised and stored safely while also allowing immediate access to the most vital summarised results.
 
 ## Table of Contents
+
 * [Conception](#Conception)
 * [Setup of Gitpod Workspace and resources](#Setup-of-Gitpod-Workspace-and-resources)
 * [Features](#Features)
@@ -127,11 +128,9 @@ I made use of Code Institutes "Love Sandwiches Walkthrough Project", "Getting Se
 - Tested if program is updating the Google worksheet correctly - Working as intended.
 - I also made use of the Python type method in order to check types of data returned where needed.
 
-
 ### Validator Testing
 
 - Made use of the [PEP8](http://pep8online.com/) online validation tool for systematic validator testing.
-
 
 #### Initial Validator Test
 
