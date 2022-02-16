@@ -1,12 +1,8 @@
-"""
-Imported in order to allow clear screen and sleep functionality
-Sourced from https://www.geeksforgeeks.org/clear-screen-python/
-"""
+# Sourced from www.geeksforgeeks.org/, clear screen and sleep.
 from os import system, name
 from time import sleep
 
-# Code below was sourced from Code Institutes "Love Sandwiches Walkthrough
-# Project", "Getting Set Up" course videos
+# Sourced from Code Institutes course videos, credit in README.
 
 # Import gspread library in order to access and update data on spreadsheet.
 import gspread
@@ -26,12 +22,9 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('survey_data_capture_sheet')
 
-"""
-End of code taken from Code Institutes "Love Sandwiches Walkthrough Project",
-"Getting Set Up" course videos
-"""
+# End of code taken from Code Institutes course videos
 
-# Code taken from https://lycaeum.dev/en/questions/287871, credited in README.
+# Code taken from https://lycaeum.dev/, coloured text, credited in README.
 CRED = '\033[91m'
 CGREEN = '\33[32m'
 CYELLOW = '\33[33m'
@@ -88,9 +81,9 @@ def capture_survey_data():
 def data_validator(user_values, capture_survey):
     """
     This will try to convert all string values into integers, check that all
-    integers are betweeen 0 and 10 and also check if exactly 4 values were
-    supplied. If any of these conditions are not met then specific
-    ValueError's will be raised.
+    integers are betweeen a minimum and maximum value and also check if a set
+    amount of values were supplied. If any of these conditions are not met
+    then specific ValueError's will be raised.
     """
     if capture_survey:
         min_value = 0
@@ -103,7 +96,7 @@ def data_validator(user_values, capture_survey):
     try:
         for user_value in user_values:
 
-            # Check that all values provided are between 0 and 10.
+            # Check that all values provided are between min and max values.
             if int(user_value) >= min_value and int(user_value) <= max_value:
                 continue
             else:
@@ -130,8 +123,9 @@ def data_validator(user_values, capture_survey):
 
 def allocate_survey_capture_number():
     """
-    This will extract the last captured survey registry number and allocate
-    the next consecutive number to the captured results
+    This will extract the last captured survey register number from
+    the worksheet and allocate the next consecutive number to the
+    captured results.
     """
     print(CYELLOW + " Allocating survey registry number....\n" + CEND)
     survey_register = SHEET.worksheet("Survey_Results").get_all_values()
@@ -143,7 +137,7 @@ def allocate_survey_capture_number():
 def update_survey_worksheet(survey_data):
     """
     Update survey worksheet by adding a new row to the worksheet
-    with the validated data list inputed by the user.
+    with the validated data from the user.
     """
     print(CYELLOW + " Updating survey data to worksheet.....\n" + CEND)
     survey_worksheet = SHEET.worksheet("Survey_Results")
@@ -157,9 +151,9 @@ def update_survey_worksheet(survey_data):
 
 def survey_summary_generator():
     """
-    This will extract all the ratings captured by question and
+    This will extract all the ratings captured by catergory and
     filter through them in order to generate a summary of
-    customer satisfaction.
+    the captured survey's.
     """
 
     # Store sheet in a variable
@@ -206,7 +200,8 @@ def survey_summary_generator():
 
 def select_function():
     """
-    ADD DOCSTRING
+    This will allow the user to select their use case, either to
+    capture survey data or view a summary of the captured data.
     """
     while True:
         print("\n Please select what you would like to do:\n"
