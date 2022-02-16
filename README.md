@@ -2,7 +2,9 @@
 
 Survey Data Processor is a Python terminal application, which runs in the Code Institute mock terminal on Heroku.
 
-It is a program designed for capturing survey data from users and allowing users to view a summary of the captured data, which a based on a fictitious customer satisfaction survey for a new phone that they have launched.
+It is a program designed for capturing survey data from users and allowing users to view a summary of the captured data, which a based on a fictitious customer satisfaction survey for a new phone.
+
+Survey Data Processor is useful by having the ability for a huge amount of survey data to be catergorised and stored safely while also allowing immediate access to the most vital summarised results.
 
 ## Table of Contents
 * [Conception](#Conception)
