@@ -23,17 +23,17 @@ It is a program designed for capturing survey data from users and allowing users
 
 - My first step was to create a flow diagram of my scope for the Survey Data Processor concept.
 
-- Here is an overview of the intial concept:
+- Here is an overview of the initial concept:
 
 
  ![initial_flowchart](assets/images/screenshots/complete_lucid_chart.png)
 
 
-I decided to create a data processor for capturing and processing survey data of a customer satifaction questionaire for a ficticious new cellphone that was launched. It must allow users to input survey ratings, validate the users input, allocate the data with an entry number, store the validated data on Google Sheets while also allowing the user to get a summary report of captured and stored data from the surveys captured. I also wanted to create a function that would create generic survey data for filling the worksheet with data to process and add the functionality for the user to email the summary results.
+I decided to create a data processor for capturing and processing survey data from a customer satisfaction questionaire, for a ficticious new cellphone that was launched. It must allow users to input survey ratings, validate the users input, allocate the data with an entry number, store the validated data on Google Sheets while also allowing the user to get a summary report of captured and stored data from the surveys captured. I also wanted to create a function that would create generic survey data for filling the worksheet with data to process and add the functionality for the user to email the summary results.
 
-- After my project conception session with my mentor, we decided to proceed without the functiontionality to create generic survey data and email the summarised results, reason being that he thought it might be a bit ambitious with the amount of time at hand. I am now very greatfull for his input.
+- After my project conception session with my mentor, we decided to proceed without the functiontionality to create generic survey data nor to email the summarised results to the user, reason being that he thought it might be a bit ambitious with the amount of time at hand. I am now very greatful for his input.
 
-- This was now the scope of my project:
+**This was now the scope of my project:**
 
 
  ![actual_flowchart](assets/images/screenshots/actual_lucid_chart.png)
@@ -93,6 +93,12 @@ I made use of Code Institutes "Love Sandwiches Walkthrough Project", "Getting Se
 
  ![survey_summary](assets/images/screenshots/survey_results.png)
 
+ ### Future Features
+
+ - Expand function for Survey Data Processor to access multiple sheets and worksheets, thereby processing multiple surveys simultaneously.
+ - Allow users to email survey summaries.
+ - Allow users to only access specific data controlled by the use of password allocation.
+
 ## Data Model
 
 - I decided to use Google sheets to store and hold all the data for the Survey Data Processor.
@@ -110,14 +116,14 @@ I made use of Code Institutes "Love Sandwiches Walkthrough Project", "Getting Se
 
 - Tested data_validator function with various data types and amounts of data provided:
 
- - If less than the required amount of values are provided - ValueError raised as intended.
- - If more than the required amount of values are provided  - ValueError raised as intended.
- - If nothing is entered - ValueError raised as intended
- - If a non numerical string is provided by the user - ValueError raised as intended.
- - If each supplied interger from the user is between the minimum and maximum required - ValueError raised as intended.
+  - If less than the required amount of values are provided - ValueError raised as intended.
+  - If more than the required amount of values are provided  - ValueError raised as intended.
+  - If nothing is entered - ValueError raised as intended
+  - If a non numerical string is provided by the user - ValueError raised as intended.
+  - If each supplied interger from the user is between the minimum and maximum required - ValueError raised as intended.
 
 - Tested if program is updating the Google worksheet correctly - Working as intended.
-- I also made use of the Python type method (**type()**) in order to check types of data returned where needed.
+- I also made use of the Python type method in order to check types of data returned where needed.
 
 
 ### Validator Testing
@@ -128,10 +134,10 @@ I made use of Code Institutes "Love Sandwiches Walkthrough Project", "Getting Se
 #### Initial Validator Test
 
 - Initial validator test for run.py results:
- - Found **E402** error with position of Google-auth module level import - **Resolved** by changing position and eliminating unneccessary commenting.
- - Found 2 errors **(W291 and W293)** for "whitespace" in code - All **Resolved**
- - Found 6 **E501** errors for length of line used - All **Resolved**
- - Found **E302** error for only spacing with 1 blank line instead of 2 - **Resolved**
+  - Found **E402** error with position of Google-auth module level import - **Resolved** by changing position and eliminating unneccessary commenting.
+  - Found 2 errors **(W291 and W293)** for "whitespace" in code - All **Resolved**
+  - Found 6 **E501** errors for length of line used - All **Resolved**
+  - Found **E302** error for only spacing with 1 blank line instead of 2 - **Resolved**
 
 ### Final Validator test
 
@@ -143,31 +149,31 @@ I made use of Code Institutes "Love Sandwiches Walkthrough Project", "Getting Se
 
 ### Unfixed Bugs
 
-- All bugs have been attended to and resolved.
+- No bugs left unfixed.
 
 ## Deployment
 
 - This application is deployed on [Heroku](https://id.heroku.com/login) as described by Code Institute in the Love Sandwiches walkthrough project [deployment video Part 1](https://youtu.be/BhW26FryaYI) and [deployment video Part 2](https://youtu.be/ONx3iEqAOM4) and these were the neccessary steps in the order that they need to be done:
 
- 1. Firstly I added a new line character (\n) to the end of the text of any input methods due to a software issue as describe in the tutorial, in order to display the input method's text in the terminal as intended.
- 2. I create a list of requirements as described in the tutorial in order for the program to run as intended, Heroku will need these dependencies in order to run the application on the deployed site.
- 3. I opened Heroku and on the dashboard page click on the "NEW" button and select the "Create a new app" option.
- 4. On the new page that opens, I named my app, selected my region and then clicked on the "Create app" button.
- 5. On the new page select the settings tab.
- 6. On the new page, in the config vars section, I selected the "Reveal Config Vars" button.
- 7. Next I selected the "Key" input field and typed in "CREDS" as the key.
- 8. I then copied my creds.json file content and pasted that into the "Value" input area, and clicked the "Add" button.
- 9. Next I added the word "PORT" as another "Key" with "8000" as the "Value" and again clicked on the "Add" button.
- 10. I then selected the "Add buildpack" button, then first selected the "Python" option and saved the changes.
- 11. I repeated the previous step but this time selected the node.js option and saved this buildpack change.
- 12. I then selected the "Deploy" tab on the top of the page.
- 13. I then selected "Github" as my deployment method and clicked on the "Connect to Github" button.
- 14. Next I searched for this app's repository in the "Connect to Github" section of the page and clicked on connect on order to connect the repository to this application.
- 15. Next I clicked on the "Deploy Branch" button in the "manual Deploy" section of the page.
- 16. Once the app was built, I selected the "View" button under the now visible "Your app was successfully deployed" message in order to view the page of the now running application.
- 17. After previewing the running application I went back to the previous page and toggled the "Enable Automatic Deploys" button so that the app would automatically update when a change is pushed to Github.
+  1. Firstly I added a new line character (\n) to the end of the text of any input methods due to a software issue as describe in the tutorial, in order to display the input method's text in the terminal as intended.
+  2. I create a list of requirements as described in the tutorial in order for the program to run as intended, Heroku will need these dependencies in order to run the application on the deployed site.
+  3. I opened Heroku and on the dashboard page click on the "NEW" button and select the "Create a new app" option.
+  4. On the new page that opens, I named my app, selected my region and then clicked on the "Create app" button.
+  5. On the new page select the settings tab.
+  6. On the new page, in the config vars section, I selected the "Reveal Config Vars" button.
+  7. Next I selected the "Key" input field and typed in "CREDS" as the key.
+  8. I then copied my creds.json file content and pasted that into the "Value" input area, and clicked the "Add" button.
+  9. Next I added the word "PORT" as another "Key" with "8000" as the "Value" and again clicked on the "Add" button.
+  10. I then selected the "Add buildpack" button, then first selected the "Python" option and saved the changes.
+  11. I repeated the previous step but this time selected the node.js option and saved this buildpack change.
+  12. I then selected the "Deploy" tab on the top of the page.
+  13. I then selected "Github" as my deployment method and clicked on the "Connect to Github" button.
+  14. Next I searched for this app's repository in the "Connect to Github" section of the page and clicked on connect on order to connect the repository to this application.
+  15. Next I clicked on the "Deploy Branch" button in the "manual Deploy" section of the page.
+  16. Once the app was built, I selected the "View" button under the now visible "Your app was successfully deployed" message in order to view the page of the now running application.
+  17. After previewing the running application I went back to the previous page and toggled the "Enable Automatic Deploys" button so that the app would automatically update when a change is pushed to Github.
 
-Here is the live link [Survey Data Capture and Extraction Application](https://survey-data-capture-extract.herokuapp.com/)
+Here is the live link [Survey Data Processor](https://survey-data-capture-extract.herokuapp.com/)
 
 ### Deployment Testing
 
