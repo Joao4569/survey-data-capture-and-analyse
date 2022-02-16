@@ -1,5 +1,9 @@
 # Survey Data Processor
 
+Survey Data Processor is a Python terminal application, which runs in the Code Institute mock terminal on Heroku.
+
+It is a program designed for capturing survey data from users and allowing users to view a summary of the captured data, which a based on a fictitious customer satisfaction survey for a new phone that they have launched.
+
 ## Table of Contents
 * [Conception](#Conception)
 * [Setup of Gitpod Workspace and resources](#Setup-of-Gitpod-Workspace-and-resources)
@@ -108,11 +112,12 @@ I made use of Code Institutes "Love Sandwiches Walkthrough Project", "Getting Se
 
  - If less than the required amount of values are provided - ValueError raised as intended.
  - If more than the required amount of values are provided  - ValueError raised as intended.
+ - If nothing is entered - ValueError raised as intended
  - If a non numerical string is provided by the user - ValueError raised as intended.
  - If each supplied interger from the user is between the minimum and maximum required - ValueError raised as intended.
 
 - Tested if program is updating the Google worksheet correctly - Working as intended.
-- I also made use of the Python type method (**type()**) in order to check data types of returned results where needed.
+- I also made use of the Python type method (**type()**) in order to check types of data returned where needed.
 
 
 ### Validator Testing
@@ -166,8 +171,8 @@ Here is the live link [Survey Data Capture and Extraction Application](https://s
 
 ### Deployment Testing
 
-- Found bug with how print statements are displayed on deployed site in relation with how they are inputted into workspace to avoid line being too long as described by PEP8 validator - **Resolved** by correct use of quotation marks, indentation and new line characters (\n), I managed to resolve all my display issues on the deployed site.
-- I ran multiple tests on how print statements appear in the terminal and adjusted to what I feel is a good user experience, trying to keep the operation logical, simple, clean and easy to use.
+- Found various bugs with how print statements are displayed on deployed site in relation with how they are inputted into workspace to avoid line being too long as described by PEP8 validator - **Resolved** by correct use of quotation marks, indentation and new line characters (\n), I managed to resolve all my display issues on the deployed site.
+- I ran multiple tests on how print statements appear on the Code Institute Heroku terminal and adjusted to what I feel is a good user experience, trying to keep the operation logical, simple, clean and easy to use.
 
 ## Credits
 
