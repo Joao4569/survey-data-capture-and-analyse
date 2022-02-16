@@ -1,5 +1,20 @@
 # Survey Data Processor
 
+## Table of Contents
+* [Conception](#Conception)
+* [Setup of Gitpod Workspace and resources](#Setup-of-Gitpod-Workspace-and-resources)
+* [Features](#Features)
+    * [Existing Features](#Existing-Features)
+* [Data Model](#Data-Model)
+* [Testing](#Testing)
+    * [Validator Testing](#Validator-Testing)
+    * [Initial Validator Test](#Initial-Validator-Test)
+    * [Final Validator test](#Final-Validator-test)
+    * [Unfixed Bugs](#Unfixed-Bugs)
+* [Deployment](#Deployment)
+    * [Deployment Testing](#Deployment-Testing)
+* [Credits](#Credits)
+
 ## Conception
 
 - My first step was to create a flow diagram of my scope for the Survey Data Processor concept.
@@ -105,7 +120,7 @@ I made use of Code Institutes "Love Sandwiches Walkthrough Project", "Getting Se
 - Made use of the [PEP8](http://pep8online.com/) online validation tool for systematic validator testing.
 
 
-#### Initial Validator Tests
+#### Initial Validator Test
 
 - Initial validator test for run.py results:
  - Found **E402** error with position of Google-auth module level import - **Resolved** by changing position and eliminating unneccessary commenting.
@@ -149,7 +164,7 @@ I made use of Code Institutes "Love Sandwiches Walkthrough Project", "Getting Se
 
 Here is the live link [Survey Data Capture and Extraction Application](https://survey-data-capture-extract.herokuapp.com/)
 
-## Deployment Testing
+### Deployment Testing
 
 - Found bug with how print statements are displayed on deployed site in relation with how they are inputted into workspace to avoid line being too long as described by PEP8 validator - **Resolved** by correct use of quotation marks, indentation and new line characters (\n), I managed to resolve all my display issues on the deployed site.
 - I ran multiple tests on how print statements appear in the terminal and adjusted to what I feel is a good user experience, trying to keep the operation logical, simple, clean and easy to use.
@@ -162,8 +177,4 @@ Here is the live link [Survey Data Capture and Extraction Application](https://s
 - I sourced the code for printing coloured text to the terminal from [lycaeum.dev](https://lycaeum.dev/en/questions/287871).
 - I researched and made use of basic Markdown syntax sourced on [markdownguide.org](https://www.markdownguide.org/basic-syntax/).
 - I sourced a solution on how to allow messages on the terminal to sleep if needed as well as a solution for clearing the terminal when needed from [geeksforgeeks.org](https://www.geeksforgeeks.org/clear-screen-python/)
-
-
-### Content
-
 - Commit comment conventions were taken from [Cheatography](https://cheatography.com/albelop/cheat-sheets/conventional-commits/), I do not totally understand all the vernacular but tried my best to implement it as best I could.
